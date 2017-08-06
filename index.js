@@ -13,6 +13,8 @@
   let PREFIX = '+';
   let ADM_PREFIX = '++';
 
+  let cor-destaque = '5351170';
+
   Bot.on('message', msg => {
 
     const message = msg.content.trim();
@@ -35,14 +37,9 @@
     }
   }
 
-    if ((/~lolicon/).test(message.content)) {
+    if ((/oi/).test(message.content) || (/oie/).test(message.content) || (/yo/).test(message.content)) {
       const mention = message.mentions.users.first();
-      message.channel.send({embed: {
-        color: 5351170,
-        description: mention.toString() + ", O-onii-san"
-      }});
-      message.delete().then(msg => console.log(`Deleted message from ${msg.author}`)).catch(console.error);
-    }
+      message.send(basicembed(cor-destaque, 'Olá'));
   });
 
   function basicembed(color,text) {
@@ -78,11 +75,6 @@
     } else {
       msg.channel.send(basicembed('5351170', 'Sem permissão'));
     }
-  }
-
-  function delet(msg, suffix) {
-    const messages = msg.channel.DownloadMessages(5);
-    msg.DeleteMessages(messages);
   }
 
   Bot.login(token);
