@@ -29,6 +29,10 @@
     case 'ohayo':
       return ohayo(msg, suffix);
 
+    // Comandos Kitty-cat
+    case 'sopa':
+      return sopa(msg, suffix);
+
     // Comandos Suporte Adm
     case 'ajuda':
       return ajuda(msg, suffix);
@@ -77,6 +81,22 @@
     }
   }
 
+  function ship(msg, suffix) {
+    msg.delete();
+    const mention = msg.mentions.users.first();
+    const strmention = mention.username.toString();
+    const strname = mention.length();
+    const mention_other = msg.mentions.users.last();
+    const strmention_other = mention_other.username.toString();
+    const strname_other = mention.length();
+    const strtotal = (strname + strname_other)/2;
+    const ship_trimOne = strmention.substring(4);
+    const ship_trimTwo = strmention_other.substring(4);
+    const ship_name = ship_trimOne + ship_trimTwo;
+
+    msg.channel.send(basicembed('5351170', ship_name));
+  }
+
   function ajuda(msg, suffix) {
     msg.delete();
     msg.channel.send({embed: {
@@ -90,6 +110,10 @@
       fields: [{
         name: "!banho @user",
         value: "@user da banho na Kitty"
+      },
+      {
+        name: "RABBITÃO",
+        value: "[Rabbit - iFonteSeca](https://www.rabb.it/ifonteseca) \r[Rabbit - MaVi](https://www.rabb.it/MaVi) "
       },
       ],
       timestamp: new Date(),
