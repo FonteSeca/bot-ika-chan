@@ -11,7 +11,6 @@
   music(Bot);
 
   let PREFIX = '+';
-  let ADM_PREFIX = '++';
 
   let cor = 'cor-destaque',
 
@@ -35,26 +34,7 @@
     			msg.channel.send(basicembed('cor-destaque', 'Comando errado ' + msg.author + ' b-baka...'));
     		}
     }
-
-        // Verifica se a mensagem é um comando Admin
-    if (message.toLowerCase().startsWith(ADM_PREFIX.toLowerCase())) {
-      // Get the command and suffix.
-      const command = message.substring(ADM_PREFIX.length).split(/[ \n]/)[0].toLowerCase().trim();
-      const suffix = message.substring(ADM_PREFIX.length + command.length).trim();
-
-        // Comandos Suporte Adm
-        case 'ajuda':
-          return ajuda(msg, suffix);
-        case 'kick':
-          return kick(msg, suffix);
-        case 'ban':
-          return ban(msg, suffix);
-        case 'delet':
-          return delet(msg, suffix);
-        default:
-          msg.channel.send(basicembed('cor-destaque', 'Comando errado ' + msg.author + ' b-baka...'));
-        }
-    }
+  }
 
   // Template Mensagem Básica
   function basicembed(color, text) {
