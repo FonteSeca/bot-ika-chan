@@ -13,7 +13,7 @@
   let PREFIX = '+';
   let ADM_PREFIX = '++';
 
-  let cor-destaque = '5351170';
+  const cor-destaque = '5351170';
 
   Bot.on('message', msg => {
 
@@ -29,8 +29,6 @@
      switch (command) {
     case 'permission':
       return test(msg, suffix);
-    case 'delet':
-      return delet(msg, suffix);
 
     default:
       msg.channel.send(basicembed('5351170', 'Comando errado ' + msg.author + ' b-baka...'));
