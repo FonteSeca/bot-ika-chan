@@ -13,7 +13,7 @@
   let PREFIX = '+';
   let ADM_PREFIX = '++';
 
-  let cor_destaque = '5351170';
+  let cor-destaque = '5351170';
 
   Bot.on('message', msg => {
 
@@ -33,14 +33,10 @@
       return delet(msg, suffix);
 
     default:
-      msg.channel.send(basicembed(cor_destaque, 'Comando errado ' + msg.author + ' b-baka...'));
+      msg.channel.send(basicembed('5351170', 'Comando errado ' + msg.author + ' b-baka...'));
     }
   }
 
-    if ((/oi/).test(message.content) || (/oie/).test(message.content) || (/yo/).test(message.content)) {
-      const mention = message.mentions.users.first();
-      console.log('asdasd');
-      msg.channel.send(basicembed(cor_destaque, 'Olá'));
   });
 
   function basicembed(color,text) {
@@ -62,7 +58,7 @@
   function ohayo(msg, suffix) {
     msg.delete();
     const mention = msg.mentions.users.first();
-    msg.channel.send(basicembed(cor_destaque, 'Ohayo ' + mention.toString()));
+    msg.channel.send(basicembed('5351170', 'Ohayo ' + mention.toString()));
   }
 
   function isAdmin(member) {
@@ -72,9 +68,9 @@
   function permission(msg, suffix) {
     msg.delete();
     if (isAdmin(msg.member)) {
-      msg.channel.send(basicembed(cor_destaque, 'Com permissão, nha'));
+      msg.channel.send(basicembed('5351170', 'Com permissão, nha'));
     } else {
-      msg.channel.send(basicembed(cor_destaque, 'Sem permissão'));
+      msg.channel.send(basicembed('5351170', 'Sem permissão'));
     }
   }
 
