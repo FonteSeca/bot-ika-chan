@@ -12,7 +12,7 @@
 
   let PREFIX = '+';
 
-  let cor = 'cor-destaque',
+  let cor-destaque = '5351170';
 
   Bot.on('message', msg => {
 
