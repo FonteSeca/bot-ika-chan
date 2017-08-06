@@ -40,7 +40,7 @@
     if ((/oi/).test(message.content) || (/oie/).test(message.content) || (/yo/).test(message.content)) {
       const mention = message.mentions.users.first();
       console.log('asdasd');
-      message.send(basicembed(cor-destaque, 'Olá'));
+      msg.channel.send(basicembed(cor-destaque, 'Olá'));
   });
 
   function basicembed(color,text) {
